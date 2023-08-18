@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 // const ejs = require("ejs");
 
 const app = express();
+const port = 5000;
 
 var listInput = ["barbara","modi","shamshera"];
 
@@ -45,6 +46,10 @@ app.post("/",function(req,res){
 })
 
 
-app.listen("3000", function(){
-    console.log("listening to port 3000");
-})
+// listen to port 5000
+app.listen(process.env.PORT || port, () => console.log('listening on port $(port)'))
+
+
+// app.listen("3000", function(){
+    // console.log("listening to port 3000");
+// })
